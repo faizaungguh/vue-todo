@@ -2,6 +2,7 @@
   <div>{{ count}}</div>
 
   <button @click="count++">Tambahkan 1</button>
+  <button @click="addCount">Add Count</button>
 </template>
 
 <script>
@@ -11,5 +12,10 @@ export default {
       count: 0
     }
   },
+  methods: {
+    addCount(){
+      this.count++
+    }
+  }
 }
 </script>
