@@ -2,7 +2,7 @@
   <div>
     {{ pesan }}
   </div>
-  <span :title='message'>bukan teks</span>
+  <span :title='pesan'>bukan teks</span>
 </template>
 
 <script>
