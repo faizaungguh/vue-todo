@@ -1,23 +1,24 @@
 <template>
-  <div v-if="status">Aku di sini</div>
-
-  <button @click="setStatus">Temukan Aku</button>
-
-  <div v-if="status">true</div>
-  <div v-else>false</div>
+  <ol>
+    <li v-for="(todo, index) in todos" :key="todo.id">
+      {{ index }} - {{ todo.activity }}
+    </li>
+  </ol>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      status: false
+      todos: [
+        { id: 1, activity: 'Turu' },
+        { id: 2, activity: 'Tilem' },
+        { id: 3, activity: 'Sare' },
+      ]
     }
   },
   methods: {
-    setStatus(){
-      this.status = !this.status
-    }
+
   }
 }
 </script>
