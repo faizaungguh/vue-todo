@@ -1,21 +1,18 @@
 <template>
-  <div>{{ count}}</div>
+  <div>{{ message }}</div>
 
-  <button @click="count++">Tambahkan 1</button>
-  <button @click="addCount">Add Count</button>
+  <input v-model="message" />
 </template>
 
 <script>
 export default {
   data() {
     return {
-      count: 0
+      message: 'Hi' 
     }
   },
   methods: {
-    addCount(){
-      this.count++
-    }
+
   }
 }
 </script>
