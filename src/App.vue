@@ -1,19 +1,23 @@
 <template>
-  <div>{{ message }}</div>
+  <div v-if="status">Aku di sini</div>
 
-  <input v-model="message" />
-  <input :value="message" @input="message = $event.target.value" />
+  <button @click="setStatus">Temukan Aku</button>
+
+  <div v-if="status">true</div>
+  <div v-else>false</div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      message: 'Hi' 
+      status: false
     }
   },
   methods: {
-
+    setStatus(){
+      this.status = !this.status
+    }
   }
 }
 </script>
