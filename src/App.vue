@@ -2,6 +2,7 @@
   <div>{{ message }}</div>
 
   <input v-model="message" />
+  <input :value="message" @input="message = $event.target.value" />
 </template>
 
 <script>
