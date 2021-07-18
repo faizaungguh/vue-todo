@@ -1,15 +1,14 @@
 <template>
-  <div>
-    {{ pesan }}
-  </div>
-  <span :title='pesan'>bukan teks</span>
+  <div>{{ count}}</div>
+
+  <button @click="count++">Tambahkan 1</button>
 </template>
 
 <script>
 export default {
   data() {
     return {
-       pesan : 'Sugeng Siang'
+      count: 0
     }
   },
 }
