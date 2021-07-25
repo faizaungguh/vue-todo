@@ -1,32 +1,18 @@
 <template>
-  <div :class="status ? 'success' : 'failed'">
-    STATUS
-  </div>
-  <button @click="status = !status">Ubah</button>
-  <div :class="[boldClass, greenClass]">TEST</div>
+  <child-component ref="refComponent" @child-click="onPress" />
+  <button @click="clickSaya">Button Parent</button>
 </template>
-
 <script>
+import ChildComponent from "./components/ChildComponent.vue";
 export default {
-  data() {
-    return {
-      status: true,
-      boldClass: 'bold',
-      greenClass: 'success'
-
+  components: { ChildComponent },
+  methods:{
+    onPress(val){
+      console.log(val)
+    },
+    clickSaya(){
+      this.$refs.refComponent.onClick();
     }
-  },
-}
+  }
+};
 </script>
-
-<style>
-  .success {
-    color:teal
-  }
-  .failed{
-    color: cyan
-  }
-  .bold{
-    font-weight: 700;
-  }
-</style>
