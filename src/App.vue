@@ -1,21 +1,32 @@
 <template>
-  <div>
-    {{message}}
+  <div :class="status ? 'success' : 'failed'">
+    STATUS
   </div>
-  <input v-model="message"/>
+  <button @click="status = !status">Ubah</button>
+  <div :class="[boldClass, greenClass]">TEST</div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      message: 'test',
+      status: true,
+      boldClass: 'bold',
+      greenClass: 'success'
+
     }
   },
-  watch: {
-    message(value){
-      console.log('perubahan di message itu adalah ' + value);
-    }
-  }
 }
 </script>
+
+<style>
+  .success {
+    color:teal
+  }
+  .failed{
+    color: cyan
+  }
+  .bold{
+    font-weight: 700;
+  }
+</style>
