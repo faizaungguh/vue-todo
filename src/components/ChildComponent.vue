@@ -1,12 +1,20 @@
 <template>
   <div>Title</div>
-  <slot />
+  <slot :data="title"/>
   <div>Content</div>
-  <slot name="slot2" />
+  <slot :data="content" />
   <div>Footer</div>
-  <slot name="slot3"/>
+  <slot :data="footer"/>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      title: 'ini title',
+      content: 'ini content',
+      footer: 'ini footer'
+    }
+  },
+};
 </script>
