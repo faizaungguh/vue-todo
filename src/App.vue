@@ -1,7 +1,11 @@
 <template>
   <div>Ini Adalah Parent Component</div>
-  <child-component text="test aja" />
-  <child-component :text="message"/>
+
+  <child-component
+  v-for="todo in todos"
+  :key="todo"
+  :text="todo"
+  />
 </template>
 
 <script>
@@ -10,8 +14,8 @@ export default {
   components: { ChildComponent },
   data() {
     return {
-      message: 'Haiii'
-    }
+      todos:[ 'pertama', 'kedua', 'ketiga']
+    };
   },
 };
 </script>
