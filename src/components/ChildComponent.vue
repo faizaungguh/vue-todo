@@ -1,20 +1,12 @@
 <template>
-  <div>
-    <span> Ini dari Child </span>
-    <button @click="onPress">Child Button</button>
-  </div>
+  <input
+    :value="modelValue"
+    @input="$emit('update:model-value', $event.target.value)"
+  />
 </template>
 
 <script>
 export default {
-  emits: ["child-click"],
-  methods: {
-    onClick() {
-      console.log("click saya");
-    },
-    onPress() {
-      this.$emit("child-click", "value");
-    },
-  },
+  props: ["modelValue"],
 };
 </script>
