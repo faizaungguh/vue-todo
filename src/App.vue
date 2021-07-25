@@ -1,14 +1,14 @@
 <template>
-  <div v-once>{{ message }}</div>
-  <button @click="message = 'berubah loh'">Update</button>
+  <div v-html="message">
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      message: 'Hi bro'
-    };
+      message: '<span style ="color: blue">biru</span>'
+    }
   },
-};
+}
 </script>
