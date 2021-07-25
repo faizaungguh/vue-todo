@@ -2,11 +2,14 @@
   <div>
     {{ message }}
   </div>
-
-  <child-component
+  <hr />
+  <!-- <child-component
     :model-value="message"
     @update:model-value="message = $event"
-  />
+  /> -->
+  
+  <!-- v-model merupakan sintatic sugar dari metode di atas -->
+  <child-component v-model="message"/>
 </template>
 
 <script>
