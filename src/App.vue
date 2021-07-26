@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="margin-top: 20px;">
+  <div class="container" style="margin-top: 20px">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">SIMPLE TODO APP</h5>
@@ -25,19 +25,27 @@
 </template>
 
 <script>
+import { ref, reactive, unMounted } from "vue";
 import List from "./components/List.vue";
 export default {
   components: { List },
+  setup() {
+    const todo = ref('');
+    const todos = reactive([]);
+
+    onMounted(()=>{
+      todos.push({a: 'test'})
+      console.log
+    })
+  },
   data() {
     return {
       todo: "",
       todos: [],
     };
   },
-  mounted(){
-    this.todos = JSON.parse(
-      localStorage.getItem('todos')
-    )
+  mounted() {
+    this.todos = JSON.parse(localStorage.getItem("todos"));
   },
   computed: {
     totalTODO() {
@@ -70,9 +78,9 @@ export default {
       });
       this.saveLocalStorage();
     },
-    saveLocalStorage(){
-      localStorage.setItem('todos', JSON.stringify(this.todos));
-    }
+    saveLocalStorage() {
+      localStorage.setItem("todos", JSON.stringify(this.todos));
+    },
   },
 };
 </script>
