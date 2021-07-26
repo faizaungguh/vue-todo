@@ -1,5 +1,3 @@
 <template>
-    <div class="demo-tab">
-        Home Compoonent
-    </div>
+  <div class="">Ini Home Component</div>
 </template>
